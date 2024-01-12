@@ -7,6 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix .",
     "build:ui": "rm -rf dist && cd ../FullStackOpen/part2/PhoneBook && npm run build && cp -r dist ../../../PhoneBook-backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
@@ -20,6 +21,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "eslint": "^8.56.0",
     "nodemon": "^3.0.2"
   }
 }
