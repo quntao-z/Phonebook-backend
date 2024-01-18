@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const Person = require('./models/person')
 const logger = require('./utils/logger')
-const config = require('../utils/config')
+const config = require('./utils/config')
 
 var morgan = require('morgan')
 app.use(express.json())
@@ -121,5 +121,5 @@ app.use(errorHandler)
 
 const PORT = config.PORT
 app.listen(PORT, () => {
-  logger.log(`Server running on port ${PORT}`)
+  logger.info(`Server running on port ${PORT}`)
 })
