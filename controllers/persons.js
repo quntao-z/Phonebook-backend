@@ -5,7 +5,6 @@ personsRouter.get('/', (request, response) => {
   Person.find().then(persons => {
     response.json(persons)
   })
-  console.log(request)
 })
 
 personsRouter.get('/info', (request, response, next) => {

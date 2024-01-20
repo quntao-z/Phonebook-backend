@@ -7,7 +7,7 @@ const cors = require('cors')
 const personsRouter = require('./controllers/persons')
 const app = express()
 const mongoose = require('mongoose')
-mongoose.set('strictQuery',false)
+mongoose.set('strictQuery', false)
 
 const url = config.MONGODB_URI
 logger.info('connecting to', url)
@@ -20,11 +20,10 @@ mongoose.connect(url)
     logger.error('error connecting to MongoDB:', error.message)
   })
 
-
-app.use(middleware.requestLogger)
-app.use(express.json())
+app.use(cors())
 app.use(express.static('dist'))
-app.use(cors)
+app.use(express.json())
+app.use(middleware.requestLogger)
 
 app.use('/api/persons', personsRouter)
 
